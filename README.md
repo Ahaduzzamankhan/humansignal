@@ -110,7 +110,7 @@ Read [SKILL.md](SKILL.md) first. It is the operational summary. Use the referenc
 If you want an agent to install the skill itself, give it the deployment URL followed by `/agent.md`:
 
 ```
-https://<your-deployment>/agent.md
+https://v2humansignalliard.vercel.app/agent.md
 ```
 
 That file contains the git and tarball install commands, verification checks, activation steps, and a context-only fallback. See [agent.md](agent.md).
