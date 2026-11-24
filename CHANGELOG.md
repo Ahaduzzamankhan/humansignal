@@ -80,6 +80,12 @@ Each mode specifies intended use, tone, vocabulary, sentence characteristics, pa
 - `tests/meaning-preservation.md` — preservation categories, a seven-step protocol, failure modes, worked checks, a preservation matrix, and change documentation.
 - `tests/regression-cases.md` — 12 tests for over-editing, technical meaning changes, removal of necessary repetition, unnecessary transitions, register drift in both directions, generic replacement, unsupported claims, voice flattening, editing good prose, list normalization, and invented conclusions.
 
+### Showcase and deployment
+- `index.html` — a dependency-free single-file showcase: an interactive diagnosis specimen, a searchable atlas of all 120 patterns, the five modes, four worked examples, the quality system, and the detector limits.
+- `agent.md` — an installation contract that lets an agent install, verify, activate, and report on the skill when a user pastes the `/agent.md` URL. Includes git, tarball, local-copy, and context-only methods.
+- `vercel.json` — static deployment configuration with a Markdown content type and revalidation headers for `/agent.md`, baseline security headers, and a `/agent` redirect.
+- `README.md` now documents the showcase, the agent install path, and static deployment.
+
 ### Project documentation
 - `README.md` with overview, scope, structure, installation, usage, mode table, pattern summary, quality assurance, design principles, and contribution guidance.
 - This `CHANGELOG.md`.

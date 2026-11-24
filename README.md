@@ -39,6 +39,9 @@ humansignal/
 ├── SKILL.md                          # Main skill instructions (v2.1.0)
 ├── README.md                         # This file
 ├── CHANGELOG.md                      # Release history
+├── index.html                        # Single-file showcase
+├── agent.md                          # Agent installation contract
+├── vercel.json                       # Vercel static config
 ├── references/
 │   ├── ai-writing-patterns.md        # 120 patterns, 30 categories
 │   ├── natural-language-principles.md
@@ -101,6 +104,41 @@ Read [SKILL.md](SKILL.md) first. It is the operational summary. Use the referenc
 
 - A Markdown reader or an agent runtime that loads Markdown skills.
 - No external services, packages, or network access.
+
+### From a URL (agent install)
+
+If you want an agent to install the skill itself, give it the deployment URL followed by `/agent.md`:
+
+```
+https://<your-deployment>/agent.md
+```
+
+That file contains the git and tarball install commands, verification checks, activation steps, and a context-only fallback. See [agent.md](agent.md).
+
+---
+
+## Deployment
+
+The repository is also a static site. `index.html` is the showcase, `agent.md` is the install contract, and `vercel.json` supplies headers and a `/agent` redirect.
+
+### Vercel
+
+1. Import the repository at [vercel.com/new](https://vercel.com/new).
+2. Use the **Other** preset. Leave the build command and output directory empty.
+3. Deploy. `index.html` is served at `/`, and the contract at `/agent.md`.
+
+With the CLI:
+
+```bash
+npm i -g vercel
+vercel --prod
+```
+
+No environment variables, serverless functions, or external services are required. The site has no trackers and no runtime dependencies.
+
+### Other static hosts
+
+Upload the repository root as-is. Keep `index.html`, `agent.md`, and the Markdown directories together so the relative links resolve. GitHub Pages serves the same files; the Vercel headers are optional.
 
 ---
 
